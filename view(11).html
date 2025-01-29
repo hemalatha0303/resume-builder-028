@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresher Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .section-title {
+            border-left: 4px solid #4a90e2;
+            padding-left: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4a90e2, #50c878);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .content {
+            flex-grow: 1; /* This ensures the resume content takes the remaining space */
+            padding: 2rem;
+        }
+        footer {
+            background-color: #f9fafb;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        footer .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* Button Styles */
+        .button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+        .button-primary {
+            background-color: #3b82f6; /* Soft Blue */
+            color: white;
+        }
+        .button-primary:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+        }
+        .button-secondary {
+            background-color: #6b7280; /* Neutral Gray */
+            color: white;
+        }
+        .button-secondary:hover {
+            background-color: #4b5563;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(107, 114, 128, 0.3);
+        }
+        .button-success {
+            background-color: #10b981; /* Soft Green */
+            color: white;
+        }
+        .button-success:hover {
+            background-color: #059669;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Animation for Resume Sections */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-delay {
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .fade-in-delay-2 {
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100">
+    <!-- Header -->
+    <header class="p-6 bg-white shadow-md flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold gradient-text">AI Powered Resume Builder</h1>
+        </div>
+        <nav>
+            <ul class="flex space-x-6 text-gray-600">
+                <li><a href="#" class="hover:text-blue-500 transition">Home</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Resume</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">CV</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Cover Letter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Resume Content -->
+    <div class="content max-w-6xl mx-auto my-8 bg-white shadow-md rounded-lg">
+        <!-- Personal Information -->
+        <section class="pb-8 fade-in">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-800">Anirudh</h1>
+                <p class="text-gray-600">Email: anirudh@example.com | Phone: +123 456 7890</p>
+                <p class="text-gray-600">LinkedIn: linkedin.com/in/anirudh | GitHub: github.com/anirudh</p>
+            </div>
+        </section>
+
+        <!-- Professional Summary -->
+        <section class="p-8 border-t border-gray-200 fade-in-delay">
+            <h2 class="section-title text-xl font-semibold text-blue-600 mb-4">Professional Summary</h2>
+            <p class="text-gray-700">
+                A motivated and detail-oriented recent graduate in Computer Science, equipped with solid technical skills in programming, web development, and database management. Passionate about leveraging technology to solve real-world problems and eager to grow in a fast-paced and dynamic environment.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="p-8 border-t border-gray-200 fade-in-delay-2">
+            <h2 class="section-title text-xl font-semibold text-blue-600 mb-4">Education</h2>
+            <ul>
+                <li class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-800">Bachelor of Technology in Computer Science</h3>
+                    <p class="text-gray-600">XYZ University | 2017 - 2021</p>
+                    <p class="text-gray-500">GPA: 8.7/10</p>
+                </li>
+                <li>
+                    <h3 class="text-lg font-bold text-gray-800">High School</h3>
+                    <p class="text-gray-600">ABC High School | 2015 - 2017</p>
+                    <p class="text-gray-500">Percentage: 92%</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section class="p-8 border-t border-gray-200 fade-in">
+            <h2 class="section-title text-xl font-semibold text-blue-600 mb-4">Skills</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <ul class="list-disc pl-5 text-gray-700">
+                    <li>Programming Languages: C++, Python, JavaScript</li>
+                    <li>Web Development: HTML, CSS, React</li>
+                    <li>Database Management: MySQL, MongoDB</li>
+                </ul>
+                <ul class="list-disc pl-5 text-gray-700">
+                    <li>Version Control: Git, GitHub</li>
+                    <li>Problem-Solving and Algorithms</li>
+                    <li>Strong Communication and Team Collaboration</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="p-8 border-t border-gray-200 fade-in-delay">
+            <h2 class="section-title text-xl font-semibold text-blue-600 mb-4">Projects</h2>
+            <ul>
+                <li class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-800">Portfolio Website</h3>
+                    <p class="text-gray-700">
+                        Developed a responsive portfolio website using HTML, CSS, and JavaScript to showcase my projects. Implemented modern design principles and enhanced user experience with smooth animations.
+                    </p>
+                </li>
+                <li>
+                    <h3 class="text-lg font-bold text-gray-800">Library Management System</h3>
+                    <p class="text-gray-700">
+                        Designed and implemented a Python-based application for managing library books and transactions. Integrated a user-friendly interface with SQLite database support.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Certifications -->
+        <section class="p-8 border-t border-gray-200 fade-in-delay-2">
+            <h2 class="section-title text-xl font-semibold text-blue-600 mb-4">Certifications</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Certified in Advanced JavaScript by XYZ Institute</li>
+                <li>Python for Everybody Specialization - Coursera</li>
+                <li>Responsive Web Design Certification - freeCodeCamp</li>
+            </ul>
+        </section>
+
+        <!-- Hobbies/Interests -->
+        <section class="p-8 border-t border-gray-200 fade-in">
+            <h2 class="section-title text-xl font-semibold text-blue-600 mb-4">Hobbies & Interests</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Competitive Programming</li>
+                <li>Building Personal Projects</li>
+                <li>Traveling and Photography</li>
+                <li>Learning New Technologies</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer with Buttons -->
+    <footer>
+        <div class="button-group">
+            <!-- Customize Resume Button -->
+            <button class="button button-primary" onclick="window.location.href='color theme(13).html';">
+                Customize Resume
+            </button>
+            
+
+            <!-- ATS Score Checker Button -->
+            <button class="button button-secondary" onclick="window.location.href='ats.html';">
+
+                ATS Score Checker
+            </button>
+
+
+            <!-- Download Button -->
+            <button class="button button-success">
+                Download
+            </button>
+        </div>
+    </footer>
+</body>
+</html>

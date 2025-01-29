@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume Templates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            perspective: 1000px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #f39c12;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: slideDownFade 1s ease-out;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            color: #34495e;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.5s forwards;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .template-category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform-style: preserve-3d;
+            animation: flipIn 0.6s ease-out forwards;
+        }
+
+        .template-category:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .template-category h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .template-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            animation: borderSlide 2s ease-in-out infinite;
+        }
+
+        .template-list {
+            list-style: none;
+        }
+
+        .template-list li {
+            margin: 1.2rem 0;
+            padding: 1.2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            transform: translateX(-20px);
+            opacity: 0;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        .template-list li:hover {
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: scale(1.03);
+        }
+
+        .template-list li h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .template-list li p {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .template-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .template-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .template-button:hover::before {
+            left: 100%;
+        }
+
+        .template-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Enhanced Animations */
+        @keyframes slideDownFade {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes flipIn {
+            0% {
+                transform: rotateX(-90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes borderSlide {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        /* Animation Delays */
+        .template-category:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .template-category:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .template-category:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .template-list li:nth-child(1) {
+            animation-delay: 0.8s;
+        }
+
+        .template-list li:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 1s ease-out 2s forwards;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .template-category {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">Resume Builder</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">CV</a></li>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Cover Letter</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Content -->
+    
+
+    <div class="templates-grid">
+        <div class="template-category">
+            <h2>Fresh Graduate Templates</h2>
+            <ul class="template-list">
+                <li>
+                    <h3>Minimalist Starter</h3>
+                    <p>Perfect for highlighting academic achievements and internships. Clean and modern design that stands out.</p>
+                    <a href="Fresh Graduate Templates(18).html" class="template-button">Use Template</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="template-category">
+            <h2>Mid-Level Professional</h2>
+            <ul class="template-list">
+                <li>
+                    <h3>Professional Growth</h3>
+                    <p>Showcase your career progression and key achievements with a balanced, professional layout.</p>
+                    <a href="Mid-Level Professional(19).html" class="template-button">Use Template</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="template-category">
+            <h2>Senior Level</h2>
+            <ul class="template-list">
+                <li>
+                    <h3>Executive Brief</h3>
+                    <p>Emphasize leadership experience and strategic achievements with a sophisticated design.</p>
+                    <a href="Senior Level(20).html" class="template-button">Use Template</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Tracking System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+	<style>
+        /* Custom radial gradient background */
+        .radial-gradient-bg {
+            background: radial-gradient(circle, rgba(173,216,230,1) 0%, rgba(147,112,219,1) 50%, rgba(255,182,193,1) 100%);
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen radial-gradient-bg ">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-96">
+        <h1 class="text-2xl font-semibold text-gray-800 mb-4">ATS Tracking System</h1>
+        
+        <label class="block text-gray-700 font-medium">Job Description:</label>
+        <textarea class="w-full h-20 p-2 border rounded-lg mt-2 focus:ring focus:ring-blue-300"></textarea>
+
+        <label class="block text-gray-700 font-medium mt-4">Upload your resume (PDF)...</label>
+        <div class="border-dashed border-2 border-gray-300 p-4 rounded-lg mt-2 flex flex-col items-center justify-center bg-gray-50">
+            <span class="text-gray-400">Drag and drop file here</span>
+            <span class="text-xs text-gray-500">Limit 200MB per file • PDF</span>
+            <input type="file" class="hidden" id="fileUpload" accept=".pdf">
+            <button onclick="document.getElementById('fileUpload').click()" class="mt-2 px-4 py-1 bg-blue-500 text-white rounded-lg">Browse files</button>
+        </div>
+
+        <button class="w-full mt-4 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Tell Me About the Resume</button>
+        <button class="w-full mt-2 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">How Can I Improve My Skills</button>
+        <button class="w-full mt-2 bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600">Percentage Match</button>
+    </div>
+</body>
+</html>
